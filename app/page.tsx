@@ -60,7 +60,7 @@ export default function Home() {
             </div>
             <div className="relative">
               {/* <OrbitAnimation /> */}
-              <Image src="/list.png" alt="Universe Chain" width={100} height={100} className="absolutex top-4x w-full animate-pulse" />
+              <Image src="/List.png" alt="Universe Chain" width={100} height={100} className="absolutex top-4x w-full animate-pulse" />
             </div>
           </div>
         </div>
