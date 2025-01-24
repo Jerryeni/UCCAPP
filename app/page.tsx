@@ -9,21 +9,66 @@ import DiamondAnimation from "@/components/DiamondAnimation";
 import { Tokenomics } from "@/components/Tokenomics";
 import StayUpdated from "@/components/StayConnected";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
   return (
     <main className="min-h-screen bg-black overflow-hidden ">
       {/* Header */}
-      <header className="w-full bg-[#E9BC1A] py-4">
+      <header className="w-full relative bg-[#E9BC1A] py-4">
         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
             <Image src="/logo.svg" alt="Universe Chain" width={40} height={40} />
             <span className="text-xl font-bold text-black">Universe Chain</span>
           </div>
-          <Button className="bg-white text-black hover:bg-white/90 rounded-full border border-blue-500">
+          <Button className="hidden md:block bg-white text-black hover:bg-white/90 rounded-full border border-blue-500">
             BUY NOW
           </Button>
+          <button
+            className="md:hidden flex flex-col items-center justify-center space-y-1 focus:outline-none"
+            onClick={toggleMenu}
+          >
+            <span className="block w-6 h-1 bg-black"></span>
+            <span className="block w-6 h-1 bg-black"></span>
+            <span className="block w-6 h-1 bg-black"></span>
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            className="fixed inset-0 bg-black/90 z-40 flex flex-col justify-center items-center space-y-8 text-white"
+          >
+            <Button
+              className="bg-[#E9BC1A] text-black hover:bg-[#d8aa18] rounded-full px-8 py-3"
+            >
+              BUY NOW
+            </Button>
+            <Link href="#about">
+              <span className="text-lg font-medium">About</span>
+            </Link>
+            <Link href="#projects">
+              <span className="text-lg font-medium">Projects</span>
+            </Link>
+            <Link href="#contact">
+              <span className="text-lg font-medium">Contact</span>
+            </Link>
+            <Button
+              className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-3 mt-6"
+              onClick={toggleMenu}
+            >
+              Close Menu
+            </Button>
+          </motion.div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -50,7 +95,7 @@ export default function Home() {
               </div>
 
               <div className="flex space-x-4 mt-8">
-                <Button className="bg-black text-white hover:bg-black/90">
+                <Button className=" bg-black text-white hover:bg-black/90">
                   BUY NOW
                 </Button>
                 <Button variant="outline" className="border-black text-black hover:bg-black/10">
@@ -203,9 +248,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <Image src="/vector1.svg" alt="gradient" width={100} height={100} className="absolute bottom-20 right-10 " />
-        <Image src="/Vector(8).png" alt="gradient" width={100} height={100} className="absolute bottom-20 left-10 " />
-        <Image src="/Vector.png" alt="gradient" width={100} height={100} className="absolute bottom-24 left-10 " />
+        <Image src="/vector1.svg" alt="gradient" width={100} height={100} className="absolute bottom-0 md:bottom-20 right-10 " />
+        <Image src="/Vector(8).png" alt="gradient" width={100} height={100} className="absolute bottom-0 md:bottom-20 left-10 " />
+        <Image src="/Vector.png" alt="gradient" width={100} height={100} className="absolute bottom-0 md:bottom-24 left-10 " />
       </section>
       <div className="relative">
         <Tokenomics />
