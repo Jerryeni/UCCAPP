@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --primary-yellow: #FFB800;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+    to bottom,
+    rgb(var(--background-start-rgb)),
+    rgb(var(--background-end-rgb))
+  );
+  min-height: 100vh;
+  font-family: "Space Grotesk", serif;
+}
+
+.hero-gradient {
+  background: linear-gradient(180deg, rgba(255, 184, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.card-gradient {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.feature-card {
+  @apply p-6 rounded-xl card-gradient backdrop-blur-sm;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255, 184, 0, 0.1);
+}
+
+.project-card {
+  @apply p-6 rounded-xl card-gradient backdrop-blur-sm;
+  min-height: 200px;
+}
+.glass-card {
+  @apply bg-black/40 backdrop-blur-xl border border-[#F0B90B]/20 rounded-2xl;
+}
+
+.glow-text {
+  text-shadow: 0 0 10px rgba(255, 184, 0, 0.5);
+}
+.animate-marquee {
+    display: flex;
+    animation: marquee 15s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
