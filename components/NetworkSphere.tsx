@@ -106,7 +106,7 @@ function NetworkPoints() {
 
 export default function NetworkSphereScene() {
   return (
-    <div className="h-[600px] w-full">
+    <div className="h-[600px] w-[600px] flex">
       <Canvas camera={{ position: [0, 0, 6], fov: 60 }}>
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />

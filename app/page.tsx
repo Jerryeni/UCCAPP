@@ -10,6 +10,8 @@ import { Tokenomics } from "@/components/Tokenomics";
 import StayUpdated from "@/components/StayConnected";
 import Link from "next/link";
 import { useState } from "react";
+import { AlertBanner } from "@/components/alert-banner/AlertBanner";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,9 +28,24 @@ export default function Home() {
             <Image src="/logo.svg" alt="Universe Chain" width={40} height={40} />
             <span className="text-xl font-bold text-black">Universe Chain</span>
           </div>
-          <Button className="hidden md:block bg-white text-black hover:bg-white/90 rounded-full border border-blue-500">
-            BUY NOW
-          </Button>
+          <div className="hidden md:flex items-center space-x-4">
+            <Link href="#about">
+              <span className="text-sm text-black  font-medium">About</span>
+            </Link>
+            <Link href="#projects">
+              <span className="text-sm text-black font-medium">Projects</span>
+            </Link>
+            <Link href="#contact">
+              <span className="text-sm text-black font-medium">Contact</span>
+            </Link>
+            <Link
+              href="https://join.ucchain.org" >
+              <Button className="hidden md:block bg-white text-black hover:bg-white/90 rounded-full border border-blue-500">
+                BUY NOW
+              </Button>
+            </Link>
+          </div>
+
           <button
             className="md:hidden flex flex-col items-center justify-center space-y-1 focus:outline-none"
             onClick={toggleMenu}
@@ -47,11 +64,14 @@ export default function Home() {
             exit={{ x: "100%" }}
             className="fixed inset-0 bg-black/90 z-40 flex flex-col justify-center items-center space-y-8 text-white"
           >
-            <Button
-              className="bg-[#E9BC1A] text-black hover:bg-[#d8aa18] rounded-full px-8 py-3"
-            >
-              BUY NOW
-            </Button>
+            <Link
+              href="https://join.ucchain.org" >
+              <Button
+                className="bg-[#E9BC1A] text-black hover:bg-[#d8aa18] rounded-full px-8 py-3"
+              >
+                BUY NOW
+              </Button>
+            </Link>
             <Link href="#about">
               <span className="text-lg font-medium">About</span>
             </Link>
@@ -72,47 +92,62 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="bg-[#E9BC1A] rounded-3xl md:rounded-s-3xl p-8 relative">
-              <div className="absolute top-4 left-4 flex space-x-2">
-                <div className="w-3 h-3 bg-black/20 rounded-full" />
-                <div className="w-3 h-3 bg-black/20 rounded-full" />
-              </div>
-              <div className="absolute top-4 right-4">
-                <div className="w-3 h-3 bg-black/20 rounded-full" />
-              </div>
-              <h1 className="text-black text-xl md:text-4xl font-bold mt-8">
-                Step Into the Universe Chain
-                <br />
-                Revolutionizing Blockchain
-                <br />
-                for a Decentralized Tomorrow
-              </h1>
-              <div className="mt-4 text-black text-[42.7px] flex gap-4 items-center"> $UCC
-                <span className="text-sm text-black/60">Hold UCC</span>
-              </div>
+      <section className="py-4 md:py-10">
+        <div className="max-w-7xl space-y-3 mx-auto px-2 relative">
 
-              <div className="flex space-x-4 mt-8">
-                <Button className=" bg-black text-white hover:bg-black/90">
-                  BUY NOW
-                </Button>
-                <Button variant="outline" className="border-black text-black hover:bg-black/10">
-                  View Explorer
-                </Button>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="flex flex-col gap-2">
+              <AlertBanner />
+
+              <div className="bg-[#E9BC1A] rounded-3xl md:rounded-none md:rounded-s-3xl p-4 md:p-8 relative">
+                <div className="absolute top-4 left-4 flex space-x-2">
+                  <div className="w-3 h-3 bg-black/20 rounded-full" />
+                  <div className="w-3 h-3 bg-black/20 rounded-full" />
+                </div>
+                <div className="absolute top-4 right-4">
+                  <div className="w-3 h-3 bg-black/20 rounded-full" />
+                </div>
+                <h1 className="text-black text-xl md:text-4xl font-bold mt-8">
+                  Step Into the Universe Chain
+                  Revolutionizing Blockchain
+                  for a Decentralized Tomorrow
+                </h1>
+                <div className="mt-4 text-black text-[42.7px] flex gap-4 items-center"> $UCC
+                  <span className="text-sm text-black/60">#HoldUCC</span>
+                </div>
+
+                <div className="flex space-x-4 mt-8">
+                  <Link
+                    href="https://join.ucchain.org" >
+                    <Button className=" bg-black text-white hover:bg-black/90">
+                      BUY NOW
+                    </Button>
+                  </Link>
+                 
+                  <Link
+                    href="https://ucscan.net/" >
+                    <Button variant="outline" className="border-black text-black hover:bg-black/10">
+                      View Explorer
+                    </Button>
+                  </Link>
+
+                </div>
               </div>
+              <Link href="/Whitepaper.pdf" download className="hover:text-yellow-500 rounded bg-[#E9BC1A]/60 text-center px-6 py-2 transition-colors">
+                Download Whitepaper
+              </Link>
             </div>
+
             <div className="relative">
               {/* <OrbitAnimation /> */}
-              <Image src="/List.png" alt="Universe Chain" width={100} height={100} className="absolutex top-4x w-full animate-pulse" />
+              <Image src="/List.png" alt="Universe Chain" width={100} height={100} className="absolutex top-4x w-full animate-pulsex" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Partners */}
-      <section className="py-10 ">
+      {/* <section className="py-10 ">
         <div className="max-w-7xl mx-auto px-4 overflow-hidden">
           <div className="flex items-center space-x-8 animate-marquee">
             <Image src="/blockchain.svg" alt="Blockchain Magazine" width={120} height={30} />
@@ -124,7 +159,7 @@ export default function Home() {
             <Image src="/tokenpost.svg" alt="Tokenpost" width={120} height={30} />
           </div>
         </div>
-      </section>
+      </section> */}
       <div className="h-[1px] max-w-7xl  mx-auto bg-white/60 my-10"></div>
 
       {/* Stats Section */}
@@ -165,7 +200,7 @@ export default function Home() {
 
 
       {/* Technology Section */}
-      <section className="py-20 px-2 max-w-7xl mx-auto">
+      <section id="about" className="py-20 px-2 max-w-7xl mx-auto">
         <div className=" px-4 max-w-5xl mx-auto">
           <div className="mb-12">
             <div className="text-white/80">Solutions</div>
@@ -213,7 +248,7 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section className="py-20 bg-[#E9BC1A] relative">
+      <section id="projects" className="py-20 bg-[#E9BC1A] relative">
         <div className="max-w-5xl mx-auto px-4">
           <h2 className="text-black text-4xl mb-12">UCCHAIN Projects</h2>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
@@ -257,7 +292,7 @@ export default function Home() {
       </div>
 
       {/* CTA Section with Network Sphere */}
-      <section className="py-20 bg-gradient-to-b from-[#E9BC1A] via-black  to-black relative overflow-hidden z-50">
+      <section id="contact" className="py-20 bg-gradient-to-b from-[#E9BC1A] via-black  to-black relative overflow-hidden z-50">
         <div className="max-w-7xl mx-auto px-4 ">
           <div className="text-center mb-20">
             <h2 className="text-black md:text-3xl text-2xl lg:text-[67.4px] font-medium mb-4">The Power of the UCC</h2>
@@ -266,21 +301,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2  -z-8 items-start gap-8 absolute top-0 left-4">
-            <div className="relative">
-              <NetworkSphereScene />
-            </div>
-            <div className="relative">
-              {/* <DiamondAnimation /> */}
-            </div>
-          </div>
+
+
           <Image src="/v2.png" alt="gradient" width={200} height={200} className="absolute md:top-0  md:right-10 right-0 -z-10" />
 
 
-          <div className="mt-12 max-w-full md:max-w-2xl mx-auto relative z-50">
+          <div className="mt-12 max-w-full md:max-w-3xl mx-auto relative z-50">
             <div className="bg-[#DCB723] rounded-3xl p-8">
               <h3 className="text-black text-2xl font-bold mb-8 text-center">JOIN UCC</h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-4 items-center gap-6">
                 <div className="text-center">
                   <h4 className="text-black font-bold mb-4 text-sm">Community & Support</h4>
                   <div className=" border-[#E5A600]/80 to-[#DCB723] bg-[#353570]/20 shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
@@ -308,6 +337,19 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-center">
+                  <h4 className="text-black font-bold mb-4 text-sm">Project Update</h4>
+                  <div className=" border-[#E5A600] to-[#DCB723] bg-[#353570]/20 shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
+                    <Link
+                      href="https://t.me/ucchaincommunity"
+                      className=""
+                    >
+                      <Image src="/telegram.png" alt="gradient" width={50} height={50} className=" " />
+
+                      <span className="text-black">Telegram</span>
+                    </Link>
+                  </div>
+                </div>
+                <div className="text-center">
                   <h4 className="text-black font-bold mb-4 text-sm">News & Update</h4>
                   <div className=" border-[#E5A600]/80 to-[#DCB723] bg-[#353570]/20  shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
                     <Link
@@ -325,9 +367,13 @@ export default function Home() {
             <StayUpdated />
           </div>
         </div>
+        <div className="absolute -left-20 -top-20">
+          <NetworkSphereScene />
+        </div>
       </section>
 
       {/* Footer */}
+      <Footer />
 
     </main>
   );
