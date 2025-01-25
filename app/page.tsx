@@ -277,12 +277,12 @@ export default function Home() {
           <Image src="/v2.png" alt="gradient" width={200} height={200} className="absolute md:top-0  md:right-10 right-0 -z-10" />
 
 
-          <div className="mt-12 max-w-2xl mx-auto relative z-50">
+          <div className="mt-12 max-w-full md:max-w-2xl mx-auto relative z-50">
             <div className="bg-[#DCB723] rounded-3xl p-8">
               <h3 className="text-black text-2xl font-bold mb-8 text-center">JOIN UCC</h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div className="text-center">
-                  <h4 className="text-black font-bold mb-4 text-sm">Community & <br /> Support</h4>
+                  <h4 className="text-black font-bold mb-4 text-sm">Community & Support</h4>
                   <div className=" border-[#E5A600]/80 to-[#DCB723] bg-[#353570]/20 shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
                     <Link
                       href="https://discord.gg/T5xwStBn"
@@ -295,8 +295,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-black font-bold mb-4 text-sm">Investor <br />
-                    Discussions</h4>
+                  <h4 className="text-black font-bold mb-4 text-sm">Investor Discussions</h4>
                   <div className=" border-[#E5A600] to-[#DCB723] bg-[#353570]/20 shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
                     <Link
                       href="https://t.me/universecryptochain"
@@ -309,7 +308,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="text-center">
-                  <h4 className="text-black font-bold mb-4 text-sm">News & <br /> Update</h4>
+                  <h4 className="text-black font-bold mb-4 text-sm">News & Update</h4>
                   <div className=" border-[#E5A600]/80 to-[#DCB723] bg-[#353570]/20  shadow-md shadow-yellow-600 rounded-xl p-4 flex flex-col mx-auto items-center justify-center gap-6 border-2  ">
                     <Link
                       href="https://x.com/ucchainofficial"
