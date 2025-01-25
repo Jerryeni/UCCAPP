@@ -17,7 +17,7 @@ export function Footer() {
      
         {/* Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 justify-center gap-8 mt-20">
-          <div className="mx-auto">
+          <div className="md:mx-auto">
             <div className="md:block flex items-center">
               <Link href="/" className="flex items-center space-x-2 mb-2">
                 <Image src='/logo.svg' width={40} height={40} alt="ucc Logo" className="w-10 shadow-sm rounded-full shadow-yellow-500 h-10 " />
@@ -29,7 +29,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="mx-auto">
+          <div className="md:mx-auto">
             <h3 className="font-semibold mb-4">Ucchain Network</h3>
             <ul className="space-y-2 text-gray-400">
               <li>
@@ -67,7 +67,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="mx-auto">
+          <div className="md:mx-auto">
             <h3 className="font-semibold mb-4">Socials</h3>
             <div className="flex flex-col justify-start gap-6">
               <Link
@@ -133,7 +133,7 @@ export function Footer() {
         {/* Back to Top Button */}
         <motion.button
           onClick={scrollToTop}
-          className="absolute right-4 -top-6 w-12 h-12 rounded-full bg-yellow-500/90 hover:bg-yellow-500 text-black flex items-center justify-center transition-colors"
+          className="absolute right-4 -top-6 w-6 h-6 md:w-12 md:h-12 rounded-full bg-yellow-500/90 hover:bg-yellow-500 text-black flex items-center justify-center transition-colors"
           whileHover={{ y: -2 }}
           whileTap={{ y: 0 }}
         >

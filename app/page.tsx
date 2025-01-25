@@ -292,7 +292,7 @@ export default function Home() {
       </div>
 
       {/* CTA Section with Network Sphere */}
-      <section id="contact" className="py-20 bg-gradient-to-b from-[#E9BC1A] via-black  to-black relative overflow-hidden z-50">
+      <section id="about" className="py-20 bg-gradient-to-b from-[#E9BC1A] via-black  to-black relative overflow-hidden z-50">
         <div className="max-w-7xl mx-auto px-4 ">
           <div className="text-center mb-20">
             <h2 className="text-black md:text-3xl text-2xl lg:text-[67.4px] font-medium mb-4">The Power of the UCC</h2>
